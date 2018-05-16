@@ -17,7 +17,7 @@ CREATE DATABASE IF NOT EXISTS `perumahan` /*!40100 DEFAULT CHARACTER SET latin1 
 USE `perumahan`;
 
 -- Dumping structure for table perumahan.afiliasis
-CREATE TABLE IF NOT EXISTS `afiliasis` (
+CREATE TABLE IF NOT EXISTS `llx_societe` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fk_user` int(10) unsigned NOT NULL,
   `phone_ref` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `afiliasis` (
 
 -- Data exporting was unselected.
 -- Dumping structure for table perumahan.societe
-CREATE TABLE IF NOT EXISTS `societe` (
+CREATE TABLE IF NOT EXISTS `llx_societe` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_client` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

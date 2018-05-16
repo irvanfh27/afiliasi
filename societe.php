@@ -48,7 +48,7 @@ include_once('layouts/sidebar.php');
                                         <?php
                                         include 'koneksi.php';
                                         $pdo = Koneksi::connect();
-                                        $sql = 'SELECT * FROM societe ORDER BY id DESC';
+                                        $sql = 'SELECT * FROM llx_societe ORDER BY id DESC';
                                         foreach ($pdo->query($sql) as $row) {
                                             echo '<tr>';
                                             echo '<td>' . $row['id'] . '</td>';
