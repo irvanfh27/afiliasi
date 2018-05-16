@@ -70,7 +70,6 @@ include_once('layouts/sidebar.php');
                                             echo '<td>';
                                             echo '<a class="btn btn-info" href="">Show</a>';
                                             echo '<a class="btn btn-primary" href="">Edit</a>';   
-                                            echo '<a class="btn btn-warning" href="redeem.php?id='.$row['id'].'">Redeem</a>';  
                                             echo '</td>';
                                             echo '</tr>';
                                         }
