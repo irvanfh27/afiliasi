@@ -62,38 +62,10 @@ include_once('layouts/sidebar.php');
                                             echo '<td>' . $row['fk_user']. '</td>';
                                             echo '<td>' . $row['phone_ref'] . '</td>';
                                             echo '<td>' . $row['phone_afi'] . '</td>';
-                                            if ($row['fk_status_ref'] == 0) {
-                                                echo '<td>Book</td>';
-                                            } elseif ($row['fk_status_ref'] == 1) {
-                                                echo '<td>DP</td>';
-                                            } elseif ($row['fk_status_ref'] == 2) {
-                                                echo '<td>SP3</td>';
-                                            } elseif ($row['fk_status_ref'] == 3) {
-                                                echo '<td>AKAD</td>';
-                                            } elseif ($row['fk_status_ref'] == 4) {
-                                                echo '<td>FIN</td>';
-                                            } elseif ($row['fk_status_ref'] == 5) {
-                                                echo '<td>OUT</td>';
-                                            }
-                                            if ($row['fk_status_afi'] == 0) {
-                                                echo '<td>Book</td>';
-                                            } elseif ($row['fk_status_afi'] == 1) {
-                                                echo '<td>DP</td>';
-                                            } elseif ($row['fk_status_afi'] == 2) {
-                                                echo '<td>SP3</td>';
-                                            } elseif ($row['fk_status_afi'] == 3) {
-                                                echo '<td>AKAD</td>';
-                                            } elseif ($row['fk_status_afi'] == 4) {
-                                                echo '<td>FIN</td>';
-                                            } elseif ($row['fk_status_afi'] == 5) {
-                                                echo '<td>OUT</td>';
-                                            } 
+                                            echo '<td>' . $row['fk_status_ref'] . '</td>';
+                                            echo '<td>' . $row['fk_status_afi'] . '</td>';
                                             echo '<td>' . $row['bonus_ref'] . '</td>';
-                                            if ($row['redeem'] == 1) {
-                                                echo '<td>Belum Terbayar</td>';
-                                            } elseif ($row['redeem'] == 0) {
-                                                echo '<td>Sudah Terbayar</td>';
-                                            }
+                                            echo '<td>' . $row['redeem'] . '</td>';
                                             echo '<td>' . $row['created_at'] . '</td>';                                                                                    
                                             echo '<td>';
                                             echo '<a class="btn btn-info" href="">Show</a>';

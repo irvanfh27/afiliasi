@@ -53,19 +53,7 @@ include_once('layouts/sidebar.php');
                                             echo '<tr>';
                                             echo '<td>' . $row['id'] . '</td>';
                                             echo '<td>' . $row['phone'] . '</td>';
-                                            if ($row['status_client'] == 0) {
-                                                echo '<td>Book</td>';
-                                            } elseif ($row['status_client'] == 1) {
-                                                echo '<td>DP</td>';
-                                            } elseif ($row['status_client'] == 2) {
-                                                echo '<td>SP3</td>';
-                                            } elseif ($row['status_client'] == 3) {
-                                                echo '<td>AKAD</td>';
-                                            } elseif ($row['status_client'] == 4) {
-                                                echo '<td>FIN</td>';
-                                            } elseif ($row['status_client'] == 5) {
-                                                echo '<td>OUT</td>';
-                                            }   
+                                            echo '<td>' . $row['status_client'] . '</td>';
                                             echo '<td>';
                                             echo '<a class="btn btn-info" href="">Show</a>';
                                             echo '<a class="btn btn-primary" href="">Edit</a>';

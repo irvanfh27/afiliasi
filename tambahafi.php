@@ -41,12 +41,7 @@ include_once('layouts/sidebar.php');
                             </div>
                             <div class="card-body">
                                 <div class="basic-elements">
-                                    <form action="{{ route('tambah.data.afiliasi') }}" method="post">
-                                        <!-- @csrf -->
-                                        <div class="form-group">
-                                            <label>FK USER</label>
-                                            <input type="numeric" class="form-control" placeholder="FK USER" name="fk_user">
-                                        </div>
+                                    <form action="insertdataafi.php" method="post">
                                          <div class="form-group">
                                             <label>Phone Ref</label>
                                             <input type="text" class="form-control" placeholder="Phone Ref" name="phone_ref">
@@ -55,25 +50,6 @@ include_once('layouts/sidebar.php');
                                             <label>Phone Afi</label>
                                             <input type="text" class="form-control" placeholder="Phone Afi" name="phone_afi">
                                         </div>
-                                        <div class="form-group">
-                                            <label>BONUS REF
-                                            </label>
-                                            <select class="form-control" name="bonus_ref">
-                                                <option>Pilih Status Bonus</option>
-                                                <option value="0">Belum Memenuhi</option>
-                                                <option value="1">Sudah Mememnuhi</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Redeem Status
-                                            </label>
-                                            <select class="form-control" name="redeem_status">
-                                                <option>Pilih Status Redeem</option>
-                                                <option value="1">Belum Terbayar</option>
-                                                <option value="0">Sudah Terbayar</option>
-                                            </select>
-                                        </div>
-
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <button type="submit" class="btn btn-default">Tambah Data</button>
