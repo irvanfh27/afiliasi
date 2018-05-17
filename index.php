@@ -55,8 +55,10 @@ include_once('layouts/sidebar.php');
                                         include 'koneksi.php';
                                         $pdo = Koneksi::connect();
                                         $sql = 'SELECT * FROM llx_afiliasi';
+                                        $result = $pdo->query($sql);
+                                      
                 
-                                        foreach ($pdo->query($sql) as $row) {
+                                        foreach ($result as $row) {
                                             echo '<tr>';
                                             echo '<td>' . $row['id'] . '</td>';
                                             echo '<td>' . $row['fk_user']. '</td>';
