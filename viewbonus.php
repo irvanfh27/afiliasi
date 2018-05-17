@@ -38,15 +38,9 @@ include_once('layouts/sidebar.php');
                                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>RowID</th>
-                                                <th>FK USER</th>
-                                                <th>PHONE REF</th>
-                                                <th>PHONE AFI</th>
-                                                <th>STATUS REF</th>
-                                                <th>STATUS AFI</th>
-                                                <th>BONUS REF</th>
-                                                <th>REDEEM</th>
-                                                <th>Datec</th>
+                                                <th>Phone REF</th>
+                                                <th>Total Afi</th>
+                                                <th>Total Bonus RP</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -54,23 +48,20 @@ include_once('layouts/sidebar.php');
                                         <?php
                                         include 'koneksi.php';
                                         $pdo = Koneksi::connect();
-                                        $sql = 'SELECT * FROM llx_afiliasi where bonus_ref = 1 AND  redeem = 1';
+                                        $sql = 'SELECT count(phone_afi), phone_ref FROM llx_afiliasi WHERE redeem = 1 AND
+                                        bonus_ref GROUP BY phone_ref' ;
 
                                         foreach ($pdo->query($sql) as $row) {
+                                            $hitung = $row['count(phone_afi)'] * 100000;
+
                                             echo '<tr>';
-                                            echo '<td>' . $row['id'] . '</td>';
-                                            echo '<td>' . $row['fk_user'] . '</td>';
                                             echo '<td>' . $row['phone_ref'] . '</td>';
-                                            echo '<td>' . $row['phone_afi'] . '</td>';
-                                            echo '<td>' . $row['fk_status_ref'] . '</td>';
-                                            echo '<td>' . $row['fk_status_afi'] . '</td>';
-                                            echo '<td>' . $row['bonus_ref'] . '</td>';
-                                            echo '<td>' . $row['redeem'] . '</td>';
-                                            echo '<td>' . $row['created_at'] . '</td>';
+                                            echo '<td>' . $row['count(phone_afi)'] . '</td>';
+                                            echo '<td> Rp. ' . $hitung .'</td>';
                                             echo '<td>';
                                             echo '<a class="btn btn-info" href="">Show</a>';
                                             echo '<a class="btn btn-primary" href="">Edit</a>';
-                                            echo '<a class="btn btn-warning" href="redeem.php?id=' . $row['id'] . '">Redeem</a>';
+                                            echo '<a class="btn btn-warning" href="redeem.php?phone_ref=' . $row['phone_ref'] . '">Redeem</a>';
                                             echo '</td>';
                                             echo '</tr>';
                                         }
