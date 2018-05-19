@@ -49,7 +49,7 @@ include_once('layouts/sidebar.php');
                                         include 'koneksi.php';
                                         $pdo = Koneksi::connect();
                                         $sql = 'SELECT count(phone_afi), phone_ref FROM llx_afiliasi WHERE redeem = 1 AND
-                                        bonus_ref GROUP BY phone_ref' ;
+                                        bonus_ref = 1 AND fk_status_ref != 0 AND fk_status_afi != 0 GROUP BY phone_ref' ;
 
                                         foreach ($pdo->query($sql) as $row) {
                                             $hitung = $row['count(phone_afi)'] * 100000;
